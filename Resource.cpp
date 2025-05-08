@@ -5,7 +5,6 @@ Resource::Resource()
 {
 }
 
-// 获取资源对应的建筑类型
 // 根据资源类型返回应该存放在哪种建筑中
 int Resource::get_ReturnBuildingType()
 {
