@@ -1,0 +1,8 @@
+# Hashes of file build rules.
+c0ad4fc6c10720fd7d1b3188f0bb513e CMakeFiles/newAOE_autogen
+9109aebc9aeda657eff9b0b789070785 newAOE_autogen/timestamp
+ba243328892cb88764bc71603caaed8d ui_AboutDialog.h
+c07e31016b7fe126056a799071d10422 ui_GameWidget.h
+a392d06b7a833d6ab246311cca2327b5 ui_MainWidget.h
+702960e70e198b071fa7658a821cadf4 ui_Option.h
+fd2709624158ba1b9f3643d864ea1154 ui_SelectWidget.h

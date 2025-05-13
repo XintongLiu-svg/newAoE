@@ -1,0 +1,19 @@
+﻿#include "AI.h"`n`n// 玩家AI和敌方AI名称数组，用于区分不同的AI实体`nQString AI::AIName[NOWPLAYER] = { "UsrAI", "EnemyAI" };
+
+
+// 控制人类单位移动到指定位置
+// - SN: 人类单位的序列号（唯一标识符）
+// - DR0, UR0: 目标位置的坐标（DR表示Down-Right方向，UR表示Up-Right方向，使用游戏内坐标系统）
+// 返回值: 指令执行状态码，如果失败则返回错误码
+int AI::HumanMove(int SN, double DR0, double UR0){
+    // 检查序列号是否属于人类单位
+    if(!isHuman(SN))
+        return ACTION_INVALID_SN;  // 无效序列号，单位不是人类类型
+    
+    // 检查目标位置是否在地图边界内（地图大小为2575x2575）
+    if(DR0 > 2575 || DR0 < 0||UR0 > 2575 || UR0 < 0)
+        return ACTION_INVALID_LOCATION;  // 返回无效位置错误
+    
+    // 创建移动指令并添加到指令队列（类型1表示移动指令）
+    return AddToIns(instruction(1,SN,DR0,UR0));
+}

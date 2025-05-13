@@ -1,0 +1,5 @@
+D:/gamee/newAOEv202g/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/newAOE.dir
+D:/gamee/newAOEv202g/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/gamee/newAOEv202g/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/gamee/newAOEv202g/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/newAOE_autogen_timestamp_deps.dir
+D:/gamee/newAOEv202g/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/newAOE_autogen.dir

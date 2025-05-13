@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "newAOE",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "newAOE::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-newAOE-Debug-7ca4a458ede9b593bec8.json",
+					"name" : "newAOE",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "newAOE_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-newAOE_autogen-Debug-68a830e4ffb5aca7c6b2.json",
+					"name" : "newAOE_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "newAOE_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-newAOE_autogen_timestamp_deps-Debug-fb027a4d0abb2313dbf4.json",
+					"name" : "newAOE_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/gamee/newAOEv202g/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug",
+		"source" : "D:/gamee/newAOEv202g"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

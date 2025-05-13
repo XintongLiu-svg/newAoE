@@ -5,7 +5,6 @@
 
 extern tagGame tagUsrGame;
 extern ins UsrIns;
-/*##########请勿修改以上部分##########*/
 class UsrAI:public AI
 {
 public:
@@ -14,7 +13,6 @@ public:
 
 
 private:
-  /***************AI通信函数，请勿修改***************/
     void processData() override;
     tagInfo getInfo(){return tagUsrGame.getInfo();}
     int AddToIns(instruction ins) override
@@ -30,7 +28,7 @@ private:
     {
         tagUsrGame.clearInsRet();
     }
-  /***************AI通信函数，请勿修改***************/
+  
 };
 
 

@@ -1,0 +1,84 @@
+﻿#include "AI.h"
+
+// 鐜╁AI鍜屾晫鏂笰I
+QString AI::AIName[NOWPLAYER] = { "UsrAI", "EnemyAI" };
+
+// - SN: 浜虹被鍗曚綅鐨勫簭鍒楀彿
+// - DR0, UR0: 鐩爣浣嶇疆鐨勫潗鏍?
+int AI::HumanMove(int SN, double DR0, double UR0){
+    // 妫€鏌ュ簭鍒楀彿鏄惁灞炰簬浜虹被
+    if(!isHuman(SN))
+        return ACTION_INVALID_SN;  // 鏃犳晥搴忓垪鍙?
+    
+    // 妫€鏌ョ洰鏍囨槸鍚﹀湪鍦板浘杈圭晫鍐?
+    if(DR0 > 2575 || DR0 < 0||UR0 > 2575 || UR0 < 0)
+        return ACTION_INVALID_LOCATION;  // 杩斿洖鏃犳晥浣嶇疆
+    
+    // 鍒涘缓绉诲姩鎸囦护
+    return AddToIns(instruction(1,SN,DR0,UR0));
+}
+
+
+// - SN: 鎵ц鍔ㄤ綔鐨勫崟浣嶅簭鍒楀彿
+// - obSN: 鍔ㄤ綔鐩爣瀵硅薄鐨勫簭鍒楀彿
+
+int AI::HumanAction(int SN,int obSN){
+    // 妫€鏌ユ墽琛岃€呮槸鍚︿负浜虹被鎴栧缓绛?
+    if(!(isHuman(SN)||isBuilding(SN)) )
+        return ACTION_INVALID_SN;  // 杩斿洖鏃犳晥搴忓垪鍙?
+    
+    // 鍒涘缓鍔ㄤ綔鎸囦护
+    return AddToIns(instruction(2,SN,obSN , true));
+}
+
+// - SN: 寤洪€犺€呯殑搴忓垪鍙?
+// - BuildingNum: 瑕佸缓閫犵殑绫诲瀷
+// - BlockDR, BlockUR: 寤洪€犱綅缃殑鍦板浘鍧楀潗鏍?
+int AI::HumanBuild(int SN, int BuildingNum, int BlockDR, int BlockUR){
+    // 妫€鏌ュ缓閫犺€呮槸鍚︿负浜虹被
+    if(!isHuman(SN)){
+        return ACTION_INVALID_SN;  // 鏃犳晥搴忓垪鍙?
+    }
+    
+    // 鍒涘缓寤洪€犳寚浠?
+    return AddToIns(instruction(3,SN,BlockDR,BlockUR,BuildingNum));
+}
+
+// - SN: 寤虹瓚鐨勫簭鍒楀彿
+// - Action: 寤虹瓚瑕佹墽琛岀殑鍔ㄤ綔绫诲瀷
+int AI::BuildingAction(int SN,int Action){
+    // 妫€鏌ュ簭鍒楀彿鏄惁灞炰簬寤虹瓚
+    if(!isBuilding(SN)){
+        return ACTION_INVALID_SN;  // 鏃犳晥搴忓垪鍙?
+    }
+    
+    // 鍒涘缓寤虹瓚鍔ㄤ綔鎸囦护
+    return AddToIns(instruction(4,SN,Action));
+}
+//void AI::printInsRet(int id){
+//    instruction tmp=getInsRet(id);
+//    if(!tmp.isExist()){
+//        qDebug()<<"ins:"<<id<<" Not Found!";
+//        return;
+//    }
+//    if(tmp.type==1){
+//        qDebug()<<"ins:"<<id
+//               <<"\n   HumanMove("<<tmp.SN<<","<<tmp.DR<<","<<tmp.UR
+//              <<")\n   return "<<tmp.ret;
+//    }else if(tmp.type==2){
+//        qDebug()<<"ins:"<<id
+//               <<"\n   HumanAct("<<tmp.SN<<","<<tmp.obSN
+//              <<")\n   return "<<tmp.ret;
+//    }else if(tmp.type==3){
+//        qDebug()<<"ins:"<<id
+//               <<"\n   HumanBuild("<<tmp.SN<<","<<tmp.BlockDR<<","<<tmp.BlockUR<<","<<tmp.option
+//              <<")\n   return "<<tmp.ret;
+//    }else if(tmp.type==4){
+//        qDebug()<<"ins:"<<id
+//               <<"\n   BuildingAct("<<tmp.SN<<","<<tmp.option
+//              <<")\n   return "<<tmp.ret;
+//    }
+//}
+
+
+
